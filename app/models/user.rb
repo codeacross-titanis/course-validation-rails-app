@@ -4,8 +4,12 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone_number, presence: true
-  validates_inclusion_of :organization, :in => [true, false] 
+  validates_inclusion_of :organization, :in => [true, false]
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
