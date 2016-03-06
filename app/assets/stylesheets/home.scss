@@ -1,7 +1,9 @@
 @import "foundation_and_overrides";
 
 .splash-container {
-  background: url(apple-iphone-books-desk.jpg) no-repeat center center;
+  background-image: image-url('apple-iphone-books-desk.jpg');
+  background-repeat: no-repeat;
+  background-position: center center fixed;
   height: 100%;
 }
 
