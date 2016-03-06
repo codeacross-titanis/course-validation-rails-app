@@ -1,6 +1,7 @@
+<div class="profile-page-container">
 <div class="profile-header">
   <div class="photo-container">
-    <%= image_tag 'default_profile_image', class: 'profile-photo' %>
+    <%= image_tag 'wolfgang.jpg', class: 'profile-photo' %>
     <br>
     <%= link_to 'Upload Photo', '#' %>
   </div>
@@ -12,25 +13,53 @@
   </div>
 </div>
 
-<!-- BADGES -->
-<ul>
+<h2 class="profile-section-title">Badges</h2>
+<div class="row">
   <% @badges.each do |badge| %>
-  <li>
-    <%= image_tag badge["logo"], class: "badge-logo" %>
-    <br>
-    <span><%= badge["name"] %></span>
-    <br>
-    <% if badge["validated_by"] %>
+    <div class="large-4 columns end badge">
+      <%= image_tag badge["logo"], class: "badge-logo" %>
+      <br>
+      <span class="bold"><%= badge["name"] %></span>
+      <br>
+      <% if badge["validated_by"] %>
       <span>Issuer: <%= badge["validated_by"] %></span>
-    <% else %>
+      <% else %>
       <span>Issuer: Self</span>
-    <% end %>
-    <br>
-    <% if badge["validated_at"] %>
+      <% end %>
+      <br>
+      <% if badge["validated_at"] %>
       <span>Validation Date: <%= badge["validated_at"] %></span>
-    <% else %>
+      <% else %>
       <span>Validation Date: Self</span>
-    <% end %>
-  </li>
+      <% end %>
+    </div>
   <% end %>
-</ul>
+</div>
+</div>
+
+<h2 class="profile-section-title">Coursework</h2>
+<div>
+  <article class="course">
+    <span class="bold">Intro to Python</span>
+    <br>
+    <span>Provider: General Assembly</span>
+    <br>
+    <span>Completed: May 2015</span>
+  </article>
+
+  <article class="course">
+    <span class="bold">Advanced jQuery</span>
+    <br>
+    <span>Provider: Resiliant Coders</span>
+    <br>
+    <span>Completed: September 2015</span>
+  </article>
+
+  <article class="course">
+    <span class="bold">API </span>
+    <br>
+    <span>Provider: General Assembly</span>
+    <br>
+    <span>Completed: May 2015</span>
+  </article>
+</div>
