@@ -1,1 +1,36 @@
-<h1>Hello World!</h1>
+<div class="profile-header">
+  <div class="photo-container">
+    <%= image_tag 'default_profile_image', class: 'profile-photo' %>
+    <br>
+    <%= link_to 'Upload Photo', '#' %>
+  </div>
+  <div class="profile-personal-info-container">
+    <h2><%= @user.full_name %></h2>
+    <span><%= @user.phone_number %></span>
+    <br>
+    <span><%= @user.email %></span>
+  </div>
+</div>
+
+<!-- BADGES -->
+<ul>
+  <% @badges.each do |badge| %>
+  <li>
+    <%= image_tag badge["logo"], class: "badge-logo" %>
+    <br>
+    <span><%= badge["name"] %></span>
+    <br>
+    <% if badge["validated_by"] %>
+      <span>Issuer: <%= badge["validated_by"] %></span>
+    <% else %>
+      <span>Issuer: Self</span>
+    <% end %>
+    <br>
+    <% if badge["validated_at"] %>
+      <span>Validation Date: <%= badge["validated_at"] %></span>
+    <% else %>
+      <span>Validation Date: Self</span>
+    <% end %>
+  </li>
+  <% end %>
+</ul>

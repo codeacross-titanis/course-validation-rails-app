@@ -17,3 +17,28 @@
  */
 @import "foundation_and_overrides";
 @import "home";
+@import "form";
+
+.profile-photo {
+  border-radius: 50%;
+}
+
+.profile-header {
+  margin: 40px;
+  display: inline-flex;
+}
+
+.photo-container {
+  order: 1;
+  align-items: center;
+}
+
+.profile-personal-info-container {
+  margin-left: 40px;
+  order: 2;
+}
+
+.badge-logo {
+  height: 80px;
+  width: 80px;
+}
