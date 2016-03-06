@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :badges, only: [:new, :create]
+
   get "home", to: "home#show"
 
   root 'home#show'
