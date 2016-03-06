@@ -1,8 +1,8 @@
 @import "foundation_and_overrides";
 
-body {
-  background: url(apple-iphone-books-desk.jpg) no-repeat center center fixed;
-  background-size: cover;
+.splash-container {
+  background: url(apple-iphone-books-desk.jpg) no-repeat center center;
+  height: 100%;
 }
 
 h1 {
