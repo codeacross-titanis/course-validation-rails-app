@@ -19,18 +19,34 @@
 @import "home";
 @import "form";
 
-.profile-photo {
-  border-radius: 50%;
+.profil-page-container {
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .profile-header {
-  margin: 40px;
-  display: inline-flex;
+  width: 75%;
+  margin: 30px auto;
+  display: flex;
+  border: 1px solid #DDD;
+  padding: 10px;
+  box-shadow: 0px 0px 22px 0px rgba(156,156,156,1);
+  border-bottom: 3px solid #008CBA;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
 }
 
 .photo-container {
   order: 1;
   align-items: center;
+  text-align: center;
+
 }
 
 .profile-personal-info-container {
@@ -38,7 +54,32 @@
   order: 2;
 }
 
+.profile-section-title {
+  margin-left: 60px;
+}
+
+.badge {
+  border: 1px solid #DDD;
+  text-align: center;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 0px 22px 0px rgba(156,156,156,1);
+  border-bottom: 3px solid #008CBA;
+}
+
 .badge-logo {
   height: 80px;
   width: 80px;
+  border-radius: 50%;
+}
+
+.course {
+  padding: 10px;
+  margin: 20px 100px;
+  width: 500px;
+  border: 1px solid #DDD;
+  box-shadow: 0px 0px 22px 0px rgba(156,156,156,1);
+  border-bottom: 3px solid #008CBA;
 }
