@@ -14,8 +14,18 @@
   </div>
 
   <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+     <%= f.label :organization, "Are you a student or an organization?" %>
+     <%= f.select :organization, [ ["Organization", true], ["Student", false] ] %>
   </div>
 
   <div class="field">
