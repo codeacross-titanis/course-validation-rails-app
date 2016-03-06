@@ -15,6 +15,9 @@
  *= require foundation_and_overrides
 
  */
+@import "foundation_and_overrides";
+@import "home";
+@import "form";
 
 .profile-photo {
   border-radius: 50%;
