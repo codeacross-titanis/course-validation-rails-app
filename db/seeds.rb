@@ -9,7 +9,7 @@
 User.create(
   first_name: "Wolfgang",
   last_name: "Mozart",
-  email: "ClassicWolfgang@baroque.com",
+  email: "classicwolfgang@baroque.com",
   phone_number: "555-5555",
   password: "iWaveMyArmsBackandForth"
 )
