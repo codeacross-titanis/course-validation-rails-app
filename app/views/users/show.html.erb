@@ -17,9 +17,9 @@
 <div class="row">
   <% @badges.each do |badge| %>
     <div class="large-4 columns end badge">
-      <%= image_tag badge["logo"], class: "badge-logo" %>
+      <%= image_tag badge["url"], class: "badge-logo" %>
       <br>
-      <span class="bold"><%= badge["name"] %></span>
+      <span class="bold"><%= badge["title"] %></span>
       <br>
       <% if badge["validated_by"] %>
       <span>Issuer: <%= badge["validated_by"] %></span>

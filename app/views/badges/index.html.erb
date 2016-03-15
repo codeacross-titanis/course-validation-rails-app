@@ -1,0 +1,11 @@
+
+<% @badges.each do |badge| %>
+  <ul>
+    <li>
+      <%= badge.title %>
+      <%= badge.completed_date %>
+      <%= badge.description %>
+      <%= badge.url %>
+    </li>
+  </ul>
+<% end %>

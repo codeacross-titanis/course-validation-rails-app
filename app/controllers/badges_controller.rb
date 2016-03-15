@@ -1,23 +1,31 @@
-require 'httparty'
-
 class BadgesController < ApplicationController
 
   def new
-    render :new
+    @badge = Badge.new
   end
 
   def create
-    @result = HTTParty.post('http://api.rolledaces.com/apiv1/badge/',
-      :body => {
-        :name => params[:name],
-        :completed_date => params[:completed_date],
-        :student => current_user.api_id,
-        :logo => params[:logo],
-        :description => params[:description]
-      }.to_json,
-        :headers => { 'Content-Type' => 'application/json' })
-      puts @result 
-    redirect_to user_path(current_user)
+    @badge = Badge.new(badge_params)
+    if @badge.save
+      redirect_to badges_path
+    else
+      flash[:error] = @badge.errors.full_messages.join('. ')
+      render :new
+    end
   end
 
+  def index
+    @badges = Badge.all
+  end
+
+  private
+
+  def badge_params
+    params.require(:badge).permit(
+      :title,
+      :completed_date,
+      :description,
+      :url
+    )
+  end
 end
