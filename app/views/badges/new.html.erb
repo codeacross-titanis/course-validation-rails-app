@@ -1,32 +1,32 @@
 <div class="row">
    <div class="small-6 small-centered columns form">
 
-     <%= form_tag({action: :create}, multipart: true) do %>
-
-         <div class="field">
-           <%= label :name, "Name" %>
-           <%= text_field_tag :name %>
-         </div>
-
-         <div class="field">
-           <%= label :completed_date, "Completed Date" %>
-           <%= date_field_tag :completed_date %>
-         </div>
-
-         <div class="field">
-           <%= label :description, "Description" %>
-           <%= text_field_tag :description %>
-         </div>
-
-         <div class="field">
-           <%= label :logo, "Logo" %>
-           <%= url_field_tag :logo %>
+   <h1>Create a New Badge</h1>
+      <%= form_for @badge do |f| %>
+        <div class="field">
+          <%= f.label :title, "Title" %>
+          <%= f.text_field :title %>
         </div>
 
-         <div class="actions">
-           <%= submit_tag "Add to Site", class: "button round submit" %>
-         </div>
-       <% end %>
+        <div class="field">
+          <%= f.label :completed_date, "Completed Date"%>
+          <%= f.date_field :completed_date %>
+        </div>
 
+        <div class="field">
+          <%= f.label :description %>
+          <%= f.text_field :description %>
+        </div>
+
+        <div class="field">
+          <%= f.label :url, "Logo" %>
+          <%= f.url_field :url %>
        </div>
-     </div>
+
+        <div class="actions">
+          <%= f.submit "Register", class: "button round submit" %>
+        </div>
+      <% end %>
+
+   </div>
+ </div>
