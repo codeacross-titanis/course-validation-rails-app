@@ -1,0 +1,22 @@
+<div class="row">
+   <div class="small-6 small-centered columns form">
+
+   <h1>Assign a Badge to a User</h1>
+      <%= form_for @user_badge do |f| %>
+        <div class="field">
+          <%= f.label :badge_id, "Select a Badge" %>
+          <%= f.select(:badge_id, options_for_select(@badge_results)) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :badge_receiver_id, "Assign To:" %>
+          <%= f.select(:badge_receiver_id, options_for_select(@user_results)) %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Assign Badge", class: "button round submit" %>
+        </div>
+      <% end %>
+
+   </div>
+ </div>

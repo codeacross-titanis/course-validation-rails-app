@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :user_badges
-  has_many :badges, through: :user_badges 
+  has_many :badges, through: :user_badges
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -14,5 +14,9 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def self.categories_for_user_dropdown
+    all.map { |u| [u.last_name, u.id] }
   end
 end
