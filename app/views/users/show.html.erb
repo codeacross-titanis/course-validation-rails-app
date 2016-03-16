@@ -3,7 +3,11 @@
   <div class="photo-container">
     <%= image_tag 'wolfgang.jpg', class: 'profile-photo' %>
     <br>
-    <%= link_to 'Upload Photo', '#' %>
+    <% if user_signed_in? && @user == current_user %>
+      <%= link_to 'Upload Photo', '#' %>
+      <br>
+      <%= link_to "Add a Course", new_course_path %>
+    <% end %>
   </div>
   <div class="profile-personal-info-container">
     <h2><%= @user.full_name %></h2>
@@ -38,7 +42,18 @@
 </div>
 
 <h2 class="profile-section-title">Coursework</h2>
+
 <div>
+  <% @courses.each do |course| %>
+    <article class="course">
+      <span class="bold"><%= course.course_title %></span>
+      <br>
+      <span>Provider: <%= course.provider %></span>
+      <br>
+      <span>Completed: <%= course.completed_date %></span>
+    </article>
+  <% end %>
+
   <article class="course">
     <span class="bold">Intro to Python</span>
     <br>
