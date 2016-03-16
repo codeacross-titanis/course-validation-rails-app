@@ -37,6 +37,9 @@
               <li class="drop-link"><%= link_to "My Profile", current_user %></li>
               <li class="drop-link"><%= link_to "Edit Account", edit_user_registration_path %></li>
               <li class="drop-link"><%= link_to "Add Badge", new_badge_path %></li>
+              <% if current_user.organization? %>
+                <li class="drop-link"><%= link_to "Assign Badge to Student", new_user_badge_path %></li>
+              <% end %>
             </ul>
           </li>
         <% else %>
