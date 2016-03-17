@@ -4,6 +4,8 @@ class CreateCourses < ActiveRecord::Migration
       t.string :course_title, null: false
       t.string :provider, null: false
       t.date :completed_date, null: false
+
+      t.belongs_to :user
     end
   end
 end
