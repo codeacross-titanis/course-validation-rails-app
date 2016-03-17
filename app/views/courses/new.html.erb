@@ -1,0 +1,27 @@
+<div class="row">
+   <div class="small-6 small-centered columns form">
+
+   <h1>Add a Course</h1>
+      <%= form_for @course do |f| %>
+        <div class="field">
+          <%= f.label :course_title, "Course Title (i.e., 'Intro to Python')" %>
+          <%= f.text_field :course_title %>
+        </div>
+
+        <div class="field">
+          <%= f.label :provider, "Course Provider (i.e. 'General Assembly')"%>
+          <%= f.text_field :provider %>
+        </div>
+
+        <div class="field">
+          <%= f.label :completed_date, "Completed Date" %>
+          <%= f.date_field :completed_date %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Add Course", class: "button round submit" %>
+        </div>
+      <% end %>
+
+   </div>
+ </div>

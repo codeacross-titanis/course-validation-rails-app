@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :user_badges
   has_many :badges, through: :user_badges
+  has_many :courses
 
   validates :first_name, presence: true
   validates :last_name, presence: true
