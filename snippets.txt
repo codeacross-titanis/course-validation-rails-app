@@ -1,0 +1,5 @@
+<!-- <% if badge["completed_date"] %>
+  <span>Validation Date: <%= badge["completed_date"].strftime("%B %Y") %></span>
+<% else %>
+  <span>Validation Date: Self</span>
+<% end %> -->
