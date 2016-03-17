@@ -25,17 +25,17 @@
       <br>
       <span class="bold"><%= badge["title"] %></span>
       <br>
-      <% if badge["validated_by"] %>
-      <span>Issuer: <%= badge["validated_by"] %></span>
+      <% if badge.badge_assigner %>
+        <span>Issuer: <%= badge.badge_assigner.first_name %> <%= badge.badge_assigner.last_name %></span>
       <% else %>
-      <span>Issuer: Self</span>
+        <span>Issuer: Self</span>
       <% end %>
       <br>
-      <% if badge["validated_at"] %>
-      <span>Validation Date: <%= badge["validated_at"] %></span>
+      <!-- <% if badge["completed_date"] %>
+        <span>Validation Date: <%= badge["completed_date"].strftime("%B %Y") %></span>
       <% else %>
-      <span>Validation Date: Self</span>
-      <% end %>
+        <span>Validation Date: Self</span>
+      <% end %> -->
     </div>
   <% end %>
 </div>
@@ -50,7 +50,7 @@
       <br>
       <span>Provider: <%= course.provider %></span>
       <br>
-      <span>Completed: <%= course.completed_date %></span>
+      <span>Completed: <%= course.completed_date.strftime("%B %Y") %></span>
     </article>
   <% end %>
 
