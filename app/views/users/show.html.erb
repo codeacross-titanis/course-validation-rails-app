@@ -19,23 +19,18 @@
 
 <h2 class="profile-section-title">Badges</h2>
 <div class="row">
-  <% @badges.each do |badge| %>
+  <% @user_badges.each do |user_badge| %>
     <div class="large-4 columns end badge">
-      <%= image_tag badge["url"], class: "badge-logo" %>
+      <%= image_tag user_badge.badge.url, class: "badge-logo" %>
       <br>
-      <span class="bold"><%= badge["title"] %></span>
+      <span class="bold"><%= user_badge.badge.title %></span>
       <br>
-      <% if badge.badge_assigner %>
-        <span>Issuer: <%= badge.badge_assigner.first_name %> <%= badge.badge_assigner.last_name %></span>
+      <% if user_badge.badge_assigner %>
+        <span>Issuer: <%= user_badge.badge_assigner.first_name %> <%= user_badge.badge_assigner.last_name %></span>
       <% else %>
         <span>Issuer: Self</span>
       <% end %>
       <br>
-      <!-- <% if badge["completed_date"] %>
-        <span>Validation Date: <%= badge["completed_date"].strftime("%B %Y") %></span>
-      <% else %>
-        <span>Validation Date: Self</span>
-      <% end %> -->
     </div>
   <% end %>
 </div>
